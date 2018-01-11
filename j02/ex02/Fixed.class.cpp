@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 15:27:49 by adubedat          #+#    #+#             */
-/*   Updated: 2018/01/11 18:42:33 by adubedat         ###   ########.fr       */
+/*   Updated: 2018/01/11 22:26:27 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Fixed::Fixed(int const val) {
 
 Fixed::Fixed(float const val) {
 
-	this->_value = roundf((val * (float)(1 << this->_bits)) + 0.5f);
+	this->_value = roundf((val * (float)(1 << this->_bits)));
 }
 
 Fixed::~Fixed(void) {
@@ -73,30 +73,24 @@ bool		Fixed::operator!=(Fixed const & src) const{
 	return (this->_value != src.getRawBits());
 }
 
-Fixed &		Fixed::operator+(Fixed const & src) {
+Fixed		Fixed::operator+(Fixed const & src) {
 
-	this->_value += src.getRawBits();
-	return (*this);
+	return (Fixed(this->toFloat() + src.toFloat()));
 }
 
-Fixed &		Fixed::operator-(Fixed const & src) {
+Fixed		Fixed::operator-(Fixed const & src) {
 
-	this->_value -= src.getRawBits();
-	return (*this);
+	return (Fixed(this->toFloat() - src.toFloat()));
 }
 
-Fixed &		Fixed::operator*(Fixed const & src) {
+Fixed		Fixed::operator*(Fixed const & src) {
 
-	this->_value = roundf((float)this->_value * (float)src.getRawBits()
-			/ (float)(1 << this->_bits) + 0.5f);
-	return (*this);
+	return (Fixed(this->toFloat() * src.toFloat()));
 }
 
-Fixed &		Fixed::operator/(Fixed const & src) {
+Fixed		Fixed::operator/(Fixed const & src) {
 
-	this->_value = roundf((float)this->_value / (float)src.getRawBits()
-		* (float)(1 << this->_bits) + 0.5f);
-	return (*this);
+	return (Fixed(this->toFloat() / src.toFloat()));
 }
 
 Fixed &		Fixed::operator++() {

@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 15:50:01 by adubedat          #+#    #+#             */
-/*   Updated: 2018/01/11 18:43:29 by adubedat         ###   ########.fr       */
+/*   Updated: 2018/01/11 22:10:17 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,9 @@ int main( void ) {
 	std::cout << "a == c ? : " << std::boolalpha << (a == c) << std::endl;
 	std::cout << "a != c ? : " << std::boolalpha << (a != c) << std::endl;
 	std::cout << "a + c ? : " << (a + c) << std::endl;
-	a = Fixed(2.5f);
 	std::cout << "a - c ? : " << (a - c) << std::endl;
-	a = Fixed(2.5f);
 	std::cout << "a * c ? : " << (a * c) << std::endl;
-	a = Fixed(2.5f);
-	c = Fixed(15);
 	std::cout << "c / a ? : " << (c / a) << std::endl;
-	a = Fixed(2.5f);
-	c = Fixed(15);
 
 	return 0;
 }

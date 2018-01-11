@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 15:28:10 by adubedat          #+#    #+#             */
-/*   Updated: 2018/01/11 18:13:27 by adubedat         ###   ########.fr       */
+/*   Updated: 2018/01/11 20:03:27 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ public:
 	bool					operator>=(Fixed const & src) const;
 	bool					operator==(Fixed const & src) const;
 	bool					operator!=(Fixed const & src) const;
-	Fixed &					operator+(Fixed const & src);
-	Fixed &					operator-(Fixed const & src);
-	Fixed &					operator*(Fixed const & src);
-	Fixed &					operator/(Fixed const & src);
+	Fixed					operator+(Fixed const & src);
+	Fixed					operator-(Fixed const & src);
+	Fixed					operator*(Fixed const & src);
+	Fixed					operator/(Fixed const & src);
 	Fixed &					operator++();
 	Fixed					operator++(int);
 	Fixed &					operator--();
