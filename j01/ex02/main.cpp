@@ -6,18 +6,22 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 14:45:48 by adubedat          #+#    #+#             */
-/*   Updated: 2018/01/10 15:23:08 by adubedat         ###   ########.fr       */
+/*   Updated: 2018/01/10 21:13:18 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
+#include <sys/time.h>
 
 std::string	generateRandomName(void) {
 
 	char		name[7];
 	std::string	str;
 	int			i;
+	struct timeval  tv;
 
+    gettimeofday(&tv, NULL);
+	srand(tv.tv_sec * tv.tv_usec);
 	for (i = 0; i < 6; i++) {
 		name[i] = 97 + (rand() % 26);
 	}

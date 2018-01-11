@@ -6,7 +6,7 @@
 /*   By: adubedat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 15:27:49 by adubedat          #+#    #+#             */
-/*   Updated: 2018/01/11 15:53:19 by adubedat         ###   ########.fr       */
+/*   Updated: 2018/01/11 15:58:30 by adubedat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,5 @@ void		Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
+
+const int Fixed::_bits = 0;
